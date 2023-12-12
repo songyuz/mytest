@@ -1,5 +1,3 @@
-SHKD-724
-RBD-795
 
 AI Solutions
 Lead the evolution of data platforms with Exynos
@@ -28,4 +26,8 @@ admin_type = models.IntegerField(default=0)
 user_type = models.CharField(max_length=50, choices=USER_TYPE, verbose_name="User Type", null=True, blank=True)
 
 
-ºÚÉ«Í¸Ã÷¶È10%
+
+hello im a new line
+
+xxx
+
