@@ -1,0 +1,31 @@
+SHKD-724
+RBD-795
+
+AI Solutions
+Lead the evolution of data platforms with Exynos
+
+ENN SDK
+Build your own AI/ML-powered models on a device
+
+Collaboration
+Enjoy the privileges of being a member of Eco-Society
+
+
+Training  Source Creation  
+			
+doc       github	lab page
+
+
+
+Exynos is comming
+AI for Everyone, Everywhere
+
+
+Unleashing the Power of Artificial Intelligence and Machine Learning
+
+
+admin_type = models.IntegerField(default=0)
+user_type = models.CharField(max_length=50, choices=USER_TYPE, verbose_name="User Type", null=True, blank=True)
+
+
+ºÚÉ«Í¸Ã÷¶È10%
