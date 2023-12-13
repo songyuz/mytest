@@ -1,23 +1,42 @@
 import os
+import sys
+# import magic
 
-# 黑名单词列表
-blacklist = ["word1", "word2", "word3"]
+blacklist = ["keyword1", "keyword2", "keyword3"]
 
-def check_file_for_blacklist(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for line_number, line in enumerate(file, 1):
-            for word in blacklist:
-                if word in line:
-                    print(f'File: {file_path}, Line: {line_number}, Keyword: {word}')
+exclude_folders = ['.git']
 
-def read_files_in_directory(directory):
+
+def is_text_file(file_path):
+    # mime = magic.Magic(mime=True)
+    # file_type = mime.from_file(file_path)
+    # return file_type.startswith('text')
+    return True
+
+def scan_file(file_path):
+    print(file_path)
+    with open(file_path, 'r') as f:
+        for line_number, line in enumerate(f, 1):
+            for keyword in blacklist:
+                if keyword in line:
+                    print(f'File: {file_path}, Line: {line_number}, Keyword: {keyword}')
+
+def scan_directory(directory):
     for root, dirs, files in os.walk(directory):
+        for exclude in exclude_folders:
+            if exclude in dirs:
+                dirs.remove(exclude)
+
         for file in files:
             file_path = os.path.join(root, file)
-            check_file_for_blacklist(file_path)
+            if os.path.isfile(file_path) and is_text_file(file_path):
+                scan_file(file_path)
 
 
-current_directory = os.getcwd()
+if __name__ == "__main__":
+    directory = os.getcwd()
 
+    if len(sys.argv) == 2:
+        directory = sys.argv[1]
 
-read_files_in_directory(current_directory)
+    scan_directory(directory)
