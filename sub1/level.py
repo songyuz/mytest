@@ -1,4 +1,4 @@
 import os
 
 
-os.path.join("keyword1", "keyword2")
+os.path.join("keyword1", "blue")
